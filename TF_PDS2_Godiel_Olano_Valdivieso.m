@@ -193,7 +193,7 @@ axes(handles.axes5)
 imshow(uint8(Areaobj3));
 impixelinfo;
 %DATOS del objeto
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 BW1=im2bw(Areaobj1,0.5);
 dato1=regionprops(BW1,'Perimeter','Area','Eccentricity','Orientation','Extent','MinorAxisLength','MajorAxisLength');%'Extrema'
