@@ -1,0 +1,21 @@
+# MATLAB
+*.asv
+*.m~
+*.mex*
+*.mlappinstall
+*.mltbx
+slprj/
+sccprj/
+codegen/
+*.autosave
+
+# Simulink
+*.slxc
+*.slxp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Compressed files (optional - remove if you want to include .rar)
+*.rar
