@@ -4,13 +4,53 @@ Uppercase letter recognition system (A-Z) formed with matchsticks, using image p
 
 > **University Project** - Advanced Signal and Image Processing (PDS2) - UPC, Peru, 2021
 
-## Overview
+## System Overview
 
 This system captures real-time images through a webcam, processes them to detect letters formed with matchsticks, and classifies them using a Support Vector Machine (SVM).
 
-```
-Webcam Capture → Binarization → Segmentation → Feature Extraction → SVM Classification → Result
-```
+![Process Flowchart](images/process_flowchart.png)
+
+## Hardware Setup
+
+The acquisition system consists of a Full HD 1080p webcam mounted inside a controlled enclosure to ensure consistent lighting conditions.
+
+| Acquisition Enclosure | Interior View |
+|:---------------------:|:-------------:|
+| ![Enclosure](images/acquisition_enclosure.png) | ![Setup](images/acquisition_setup.png) |
+
+## Image Processing Pipeline
+
+### 1. Image Capture
+Raw image captured from the webcam showing matchstick letters:
+
+![Captured Letters](images/captured_letters_JHX.png)
+
+### 2. Binarization
+Conversion to 1-bit binary image for segmentation:
+
+![Binarized Letters](images/binarized_letters_JHX.png)
+
+### 3. Segmentation & Classification
+8-connectivity labeling separates individual letters, followed by feature extraction and SVM classification.
+
+## GUI Application
+
+The MATLAB GUIDE interface provides real-time letter recognition:
+
+| Demo: O-R-O | Demo: A-B-C |
+|:-----------:|:-----------:|
+| ![GUI ORO](images/gui_demo_ORO.png) | ![GUI ABC](images/gui_demo_ABC.png) |
+
+**Features:**
+- **Entrenar** (Train): Train the SVM model with the database
+- **Capturar** (Capture): Capture and classify 3 letters in real-time
+- Shows captured image, binarized image, and individual segmented letters
+
+## Results
+
+The SVM classifier achieves **97.89% accuracy** on the validation set:
+
+![Confusion Matrix](images/confusion_matrix.png)
 
 ## Technical Details
 
@@ -22,7 +62,6 @@ Webcam Capture → Binarization → Segmentation → Feature Extraction → SVM 
 | Features | Area, Perimeter, Major/Minor axes, Upper/Lower area |
 | Classifier | Multiclass SVM (RBF kernel, One-vs-One strategy) |
 | Validation | K-Fold (K=5), 70% training / 30% validation |
-| Accuracy | ~97.89% |
 
 ## File Structure
 
@@ -32,6 +71,7 @@ Webcam Capture → Binarization → Segmentation → Feature Extraction → SVM 
 ├── trainClassifierSVM.m                  # SVM training function
 ├── plotConfMat2.m                        # Confusion matrix visualization
 ├── TF PDS2.mat                           # Training database
+├── images/                               # Project images
 └── *.pdf                                 # Project documentation (Spanish)
 ```
 
@@ -59,7 +99,7 @@ Webcam Capture → Binarization → Segmentation → Feature Extraction → SVM 
 
 ## Team
 
-- Jorge Ronaldo Godiel Gálvez
+- Jorge Ronaldo Godiel Galvez
 - Bryan Giomar Valdivieso Becerra
 - Luis Harold Olano Tejada
 
