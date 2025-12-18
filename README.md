@@ -67,9 +67,9 @@ The MATLAB GUIDE interface provides real-time letter recognition:
 - **Capturar** (Capture): Capture and classify 3 letters in real-time
 - Shows captured image, binarized image, and individual segmented letters
 
-## Results
+## Training Validation
 
-The SVM classifier achieves **97.89% accuracy** on the validation set:
+The SVM classifier achieves **97.89% accuracy** on the validation set (30% of the database):
 
 ![Confusion Matrix](images/confusion_matrix.png)
 
