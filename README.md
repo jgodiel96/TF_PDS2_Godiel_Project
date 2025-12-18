@@ -10,25 +10,25 @@ This system captures real-time images through a webcam, processes them to detect
 
 ```mermaid
 flowchart TB
-    A[Train SVM\nusing Database] --> B[Generate Confusion Matrix\nto Validate Results]
+    A[SVM Training\nusing Database] --> B[Obtain Confusion Matrix\nto Validate Results]
     B --> C
 
     C[Real-time\nImage Capture] --> D[Grayscale\nBinarization]
-    D --> E[Region Labeling\nby Size]
-    E --> F[Feature/Descriptor\nRecognition]
-    F --> G[Separate 3 Letters\nby Area]
+    D --> E[Labeling\nby Size]
+    E --> F[Descriptor\nRecognition]
+    F --> G[Separation of\n3 Letters by Area]
     G --> H[Identified Letters\nEnter SVM for\nClassification]
     H --> I[Display Results\nin GUI]
 
-    style A fill:#f0c866
-    style B fill:#f0c866
-    style C fill:#7ecbc4
-    style D fill:#7ecbc4
-    style E fill:#7ecbc4
-    style F fill:#7ecbc4
-    style G fill:#7ecbc4
-    style H fill:#7ecbc4
-    style I fill:#f0c866
+    style A fill:#f0c866,color:#000
+    style B fill:#f0c866,color:#000
+    style C fill:#7ecbc4,color:#000
+    style D fill:#7ecbc4,color:#000
+    style E fill:#7ecbc4,color:#000
+    style F fill:#7ecbc4,color:#000
+    style G fill:#7ecbc4,color:#000
+    style H fill:#7ecbc4,color:#000
+    style I fill:#f0c866,color:#000
 ```
 
 ## Hardware Setup
