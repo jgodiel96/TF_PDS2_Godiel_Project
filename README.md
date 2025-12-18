@@ -15,8 +15,8 @@ flowchart TB
 
     C[Real-time Image Capture] --> D[Grayscale Binarization]
     D --> E[Labeling by Size]
-    E --> F[Descriptor Recognition]
-    F --> G[Separation of 3 Letters by Area]
+    E --> F[Separation of 3 Letters by Area]
+    F --> G[Descriptor/Feature Extraction]
     G --> H[Identified Letters Enter SVM for Classification]
     H --> I[Display Results in GUI]
 
@@ -82,7 +82,8 @@ The SVM classifier achieves **97.89% accuracy** on the validation set (30% of th
 | Segmentation | 8-connectivity labeling |
 | Features | Area, Perimeter, Major/Minor axes, Upper/Lower area |
 | Classifier | Multiclass SVM (RBF kernel, One-vs-One strategy) |
-| Validation | K-Fold (K=5), 70% training / 30% validation |
+| Cross-validation | K-Fold (K=5) |
+| Data split | 70% training / 30% testing |
 
 ## File Structure
 
