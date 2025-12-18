@@ -8,7 +8,23 @@ Uppercase letter recognition system (A-Z) formed with matchsticks, using image p
 
 This system captures real-time images through a webcam, processes them to detect letters formed with matchsticks, and classifies them using a Support Vector Machine (SVM).
 
-![Process Flowchart](images/process_flowchart.png)
+```mermaid
+flowchart TB
+    subgraph Training["Training Phase"]
+        A[Train SVM using Database] --> B[Generate Confusion Matrix\nfor Validation]
+    end
+
+    subgraph Recognition["Recognition Phase"]
+        C[Real-time\nImage Capture] --> D[Grayscale\nBinarization]
+        D --> E[Region Labeling\nby Size]
+        E --> F[Feature\nExtraction]
+        F --> G[Separate 3 Letters\nby Area]
+        G --> H[Letters fed to SVM\nfor Classification]
+        H --> I[Display Results\nin GUI]
+    end
+
+    B --> C
+```
 
 ## Hardware Setup
 
